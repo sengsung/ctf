@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+html(lang="ko")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title 'ㅅ'
+    body
+        button(onclick="window.location = 'fboard/admin'" style='position:absolute; right:10px') 관리자 페이지
+        button(onclick="window.location = '/fboard/post'") 글 쓰기
+        table
+            tr
+                th id
+                th 제목
+                th 게시자
+            -for(var i = list.length - 1; i >= 0; i--)
+                tr
+                    td=list[i].id
+                    td
+                        a(href=`fboard/view/${list[i].id}`)=list[i].title
+                    td=list[i].user
